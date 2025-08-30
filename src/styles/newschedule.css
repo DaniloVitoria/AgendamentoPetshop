@@ -1,0 +1,48 @@
+
+
+
+
+.new__schedule{
+    
+    background-color: var(--content-brand);
+    display: inline;
+    position: fixed;
+    top: 33em;
+    right: 8em;
+    padding: 0.75em;
+
+    border-radius: 8px;
+
+    box-shadow:  0 0 1.5em var(--content-brand);
+
+    font: var(--label-large);
+    &:hover{
+      cursor: pointer;
+    }
+}
+
+
+
+@media (width <= 70em ){
+
+.new__schedule{
+    
+ position:initial;
+max-height: 3em;
+    margin-top: 2em;
+
+}
+
+ .background__new__schedule{
+ display: flex;
+ justify-content: center;
+align-items:self-start;
+
+  background-color: var(--background-tertiary);
+    height: 55vh;
+ }
+
+
+
+}
+

@@ -1,0 +1,27 @@
+#schedule{
+
+
+
+    & .container__all{
+        padding: 2em 5em 5em 5em;
+        margin: 0 15.5em;
+    }
+}
+
+
+
+
+@media (width <= 70em ){
+
+#schedule{
+    
+ & .container__all{
+
+
+    margin: 0;
+     padding: 0.75em 1.25em;
+
+    }
+
+    }
+}
