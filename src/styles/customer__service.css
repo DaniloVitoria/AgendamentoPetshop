@@ -1,0 +1,116 @@
+.customer__service{
+    background-color: var(--background-tertiary);
+    margin: 1.375em 27.8125em;
+    padding: 2.5em;
+}
+
+
+.header__customer__service{
+
+    margin-bottom: 1.75em;
+
+    & p {
+        font: var(--title);
+        color: var(--content-primary);
+    }
+
+    & span {
+        font: var(--paragraph-medium);
+        color: var(--content-secondary);
+    }
+
+}
+
+
+
+.customer__info__tutor__name{
+
+    color: var(--content-primary);
+    font: var(--label-medium);
+}
+
+
+#customer__info__tutor__name__input{
+    background: url("../assets/User--Streamline-Solar.svg")no-repeat left 0.5em center/ 1.3em;
+    
+    background-color: transparent;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    width: 100%;
+   height: 2em;
+
+    margin-bottom: 1em;
+}
+
+#customer__info__tutor__name__input[value]{
+        color: var(--content-secondary);
+        padding-left: 2em;
+    }
+
+
+
+/*end of tutor__name*/
+
+
+    
+.customer__info__pet__name{
+
+    color: var(--content-primary);
+    font: var(--label-medium);
+}
+
+
+#customer__info__pet__name__input{
+    background: url("../assets/Pet-Paw--Streamline-Core.svg")no-repeat left 0.5em center/ 1.3em;
+    
+    background-color: transparent;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    width: 100%;
+   height: 2em;
+
+    margin-bottom: 1em;
+}
+
+#customer__info__pet__name__input[value]{
+        color: var(--content-secondary);
+        padding-left: 2em;
+    }
+
+/*end of pet__name*/
+
+
+
+
+    
+.customer__info__pet__name{
+
+    color: var(--content-primary);
+    font: var(--label-medium);
+}
+
+
+#customer__info__pet__name__input{
+    background: url("../assets/Pet-Paw--Streamline-Core.svg")no-repeat left 0.5em center/ 1.3em;
+    
+    background-color: transparent;
+
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    width: 100%;
+   height: 2em;
+
+    margin-bottom: 1em;
+}
+
+#customer__info__pet__name__input[value]{
+        color: var(--content-secondary);
+        padding-left: 2em;
+    }
+
+
+
+
+
