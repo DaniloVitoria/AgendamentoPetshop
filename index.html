@@ -245,18 +245,66 @@
         <form >
             <!--Tutor info-->
             <p class="customer__info__tutor__name">Nome do doutor</p>
-            <input type="text" id="customer__info__tutor__name__input" value="Helena Souza" >
+            <input type="text" id="customer__info__tutor__name__input" placeholder="Helena Souza" >
             <!--End of Tutor info-->
 
             <!--Pet info-->
             <p class="customer__info__pet__name">Nome do pet</p>
-            <input type="text" id="customer__info__pet__name__input" value="Cheddar" >
+            <input type="text" id="customer__info__pet__name__input" placeholder="Cheddar" >
             <!--End of Pet info-->
 
-            <p class="customer__info__phone__number">Nome do pet</p>
-            <input type="text" id="customer__info__pet__phone__number__input" value="Cheddar" >
-        </form>
+            <!--Phone number-->
+            <p class="customer__info__phone__number">Telefone</p>
+            <input type="text" id="customer__info__phone__number__input" placeholder="(00) 0 0000-0000" >
+            <!--End of phone number-->
 
+
+
+
+
+            <!--Service info-->
+            <p class="customer__info__sevice__description">Descrição do serviço</p>
+            <input type="text" id="customer__info__sevice__description__input" placeholder="Banho e tosa" >
+            <!--End of service info-->
+
+
+
+            <div class="split__to__schedule">
+
+                <p class="split__to__schedule__date">Data</p>
+                <p class="split__to__schedule__time">Hour</p>
+
+
+                  <div class="split__to__schedule__clock ">
+            <i>
+                <img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="">
+            </i>
+            <input id="date" type="date" name="date" required="" >
+        </div>
+    
+
+
+
+
+           <div class="split__to__schedule__time__input__div ">
+            <i>
+                <img src="./src/assets/Clock-Circle--Streamline-Solar.svg" alt="">
+            </i>
+             <input id="time__to__schedule__input" type="time" min="08:00" max="18:00" >
+        </div>
+               
+            </div>
+
+<div class="container__button__final ">
+            <button class="confirm__schedule">
+
+    <span>Agendar</span>
+
+            </button>
+</div>
+
+        
+</form>
     </main>
 
 </div>

@@ -2,6 +2,23 @@
     background-color: var(--background-tertiary);
     margin: 1.375em 27.8125em;
     padding: 2.5em;
+    border-radius: 12px;
+    display: none;
+    position: absolute;
+    
+    top: 0;
+}
+
+.blurbackground {
+    filter: blur(12px);
+}
+
+.whenHidden {
+    display: none;
+}
+
+.whenShow {
+    display: block;
 }
 
 
@@ -23,17 +40,30 @@
 
 
 
-.customer__info__tutor__name{
+.customer__info__tutor__name, .customer__info__pet__name, .customer__info__phone__number, .customer__info__sevice__description{
 
     color: var(--content-primary);
     font: var(--label-medium);
 }
 
 
-#customer__info__tutor__name__input{
-    background: url("../assets/User--Streamline-Solar.svg")no-repeat left 0.5em center/ 1.3em;
-    
-    background-color: transparent;
+
+
+#customer__info__tutor__name__input[placeholder], #customer__info__phone__number__input[placeholder], #customer__info__pet__name__input[placeholder]{
+        color: var(--content-secondary);
+        padding-left: 2.3em;
+    }
+
+#customer__info__sevice__description__input[placeholder]{
+      padding: 0.75em 0.75em 2.9375em 0.75em;
+      color: var(--content-secondary);
+}
+
+
+   
+ /*background content*/
+#customer__info__tutor__name__input, #customer__info__pet__name__input, #customer__info__phone__number__input, #customer__info__sevice__description__input{
+  background-color: transparent;
 
     border: 1px solid var(--border-primary);
     border-radius: 8px;
@@ -42,42 +72,21 @@
 
     margin-bottom: 1em;
 }
-
-#customer__info__tutor__name__input[value]{
-        color: var(--content-secondary);
-        padding-left: 2em;
-    }
-
-
-
-/*end of tutor__name*/
-
-
     
-.customer__info__pet__name{
 
-    color: var(--content-primary);
-    font: var(--label-medium);
-}
 
 
 #customer__info__pet__name__input{
     background: url("../assets/Pet-Paw--Streamline-Core.svg")no-repeat left 0.5em center/ 1.3em;
-    
-    background-color: transparent;
 
-    border: 1px solid var(--border-primary);
-    border-radius: 8px;
-    width: 100%;
-   height: 2em;
-
-    margin-bottom: 1em;
+  
 }
 
-#customer__info__pet__name__input[value]{
-        color: var(--content-secondary);
-        padding-left: 2em;
-    }
+#customer__info__tutor__name__input{
+    background: url("../assets/User--Streamline-Solar.svg")no-repeat left 0.5em center/ 1.3em;
+    
+   
+}
 
 /*end of pet__name*/
 
@@ -85,32 +94,150 @@
 
 
     
-.customer__info__pet__name{
-
-    color: var(--content-primary);
-    font: var(--label-medium);
-}
 
 
-#customer__info__pet__name__input{
-    background: url("../assets/Pet-Paw--Streamline-Core.svg")no-repeat left 0.5em center/ 1.3em;
+#customer__info__phone__number__input
+{
+    background: url("../assets/Phone--Streamline-Solar.svg")no-repeat left 0.5em center/ 1.3em;
     
-    background-color: transparent;
-
-    border: 1px solid var(--border-primary);
-    border-radius: 8px;
-    width: 100%;
-   height: 2em;
-
-    margin-bottom: 1em;
 }
 
-#customer__info__pet__name__input[value]{
-        color: var(--content-secondary);
-        padding-left: 2em;
+
+
+
+
+
+
+.split__to__schedule{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.split__to__schedule__clock{
+        grid-column: 1 / 2;
+        display: flex;
+
+        align-self: center;
+        justify-self: start;
+
+
+        padding: 0.6875em;
+        gap: 0.25em;
+        border: 2px var(--border-primary) solid;
+        border-radius: 1em;
+        & > i {
+            justify-self: end;
+        }
     }
 
 
+.split__to__schedule__clock input{
+
+    color: white;
+
+    outline: none;
+    border: none;
+    background: transparent;
+
+
+}
+
+.split__to__schedule__clock input::-webkit-calendar-picker-indicator{
+     background-image: url(../assets/Icon.svg);
+   
+    cursor: pointer;
+}
+
+.split__to__schedule__clock:focus-within {
+  border: 1.5px solid #b8952e;
+}
 
 
 
+/*Time*/
+
+
+
+/* Estilos para o contêiner flexbox */
+.split__to__schedule__time__input__div {
+    grid-column: 2 / 4;
+    display: flex;
+    align-self: center;
+    justify-self: start;
+    padding: 0.6875em;
+    gap: 0.25em;
+    border: 2px var(--border-primary) solid;
+    border-radius: 1em;
+}
+
+/* O seletor '& > i' é para pré-processadores como Sass.
+   Em CSS puro, você deve usar o seletor completo. */
+.split__to__schedule__time__input__div > i {
+    justify-self: end;
+}
+
+/* Estilos para o elemento de input com o ID específico. */
+#time__to__schedule__input {
+    color: white;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+/* Estilo para o ícone do calendário dentro do input. */
+#time__to__schedule__input::-webkit-calendar-picker-indicator {
+    background-image: url(../assets/Icon.svg);
+    cursor: pointer;
+}
+
+/* Estilo para o input quando ele estiver em foco. */
+#time__to__schedule__input:focus {
+    border: 1.5px solid #b8952e;
+}
+
+
+
+.split__to__schedule__date, .split__to__schedule__time{
+    font: var(--label-medium);
+    color: var(--content-primary);
+}
+
+
+
+
+.container__button__final{
+
+    display: flex;
+
+    justify-content:end;
+}
+
+
+.confirm__schedule{
+    
+    background-color: var(--content-brand);
+    display: inline;
+    
+    padding: 0.75em ;
+    margin-top: 1.75em;
+    border-radius: 8px;
+
+    
+
+    font: var(--label-large);
+    &:hover{
+      cursor: pointer;
+    }
+}

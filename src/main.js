@@ -2,6 +2,10 @@
 
 "use strict"
 
+// JS
+import "./modules/eventModal.js"
+
+
 // CSS
 import "./styles/global.css"
 import "./styles/utils.css"

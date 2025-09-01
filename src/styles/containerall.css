@@ -5,6 +5,7 @@
     & .container__all{
         padding: 2em 5em 5em 5em;
         margin: 0 15.5em;
+        position: relative;
     }
 }
 
