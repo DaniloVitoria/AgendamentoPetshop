@@ -71,7 +71,7 @@
 
 
             <div class="time__of__day">
-                <header>
+                <header class="header__of__time__of__day">
 
 
                     <div class="container__header__period">
@@ -115,7 +115,7 @@
                 </div>
 
             </div>
-
+<!--
             <div class="time__of__day">
                 <header>
 
@@ -208,6 +208,7 @@
                 </div>
 
             </div>
+-->
         </div>
     </main>
 
@@ -244,18 +245,18 @@
     <main class="customer__info">
         <form >
             <!--Tutor info-->
-            <p class="customer__info__tutor__name">Nome do doutor</p>
-            <input type="text" id="customer__info__tutor__name__input" placeholder="Helena Souza" >
+            <p class="customer__info__tutor__name">Nome do tutor</p>
+            <input type="text" id="customer__info__tutor__name__input" placeholder="Helena Souza" required>
             <!--End of Tutor info-->
 
             <!--Pet info-->
             <p class="customer__info__pet__name">Nome do pet</p>
-            <input type="text" id="customer__info__pet__name__input" placeholder="Cheddar" >
+            <input type="text" id="customer__info__pet__name__input" placeholder="Cheddar" required >
             <!--End of Pet info-->
 
             <!--Phone number-->
             <p class="customer__info__phone__number">Telefone</p>
-            <input type="text" id="customer__info__phone__number__input" placeholder="(00) 0 0000-0000" >
+            <input type="text" id="customer__info__phone__number__input" placeholder="(00) 0 0000-0000" required>
             <!--End of phone number-->
 
 
@@ -264,7 +265,7 @@
 
             <!--Service info-->
             <p class="customer__info__sevice__description">Descrição do serviço</p>
-            <input type="text" id="customer__info__sevice__description__input" placeholder="Banho e tosa" >
+            <input type="text" id="customer__info__sevice__description__input" placeholder="Banho e tosa" required >
             <!--End of service info-->
 
 
@@ -279,7 +280,7 @@
             <i>
                 <img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="">
             </i>
-            <input id="date" type="date" name="date" required="" >
+            <input id="split__to__schedule__clock__date__input" type="date" name="date" required="" >
         </div>
     
 
@@ -290,7 +291,7 @@
             <i>
                 <img src="./src/assets/Clock-Circle--Streamline-Solar.svg" alt="">
             </i>
-             <input id="time__to__schedule__input" type="time" min="08:00" max="18:00" >
+             <input id="time__to__schedule__input" type="time" min="08:00" max="18:00" required >
         </div>
                
             </div>

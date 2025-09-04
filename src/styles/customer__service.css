@@ -1,6 +1,8 @@
 .customer__service{
+    display: grid;
+    justify-self: center;
     background-color: var(--background-tertiary);
-    margin: 1.375em 27.8125em;
+    margin: 1.375em;
     padding: 2.5em;
     border-radius: 12px;
     display: none;

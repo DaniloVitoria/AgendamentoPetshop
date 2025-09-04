@@ -3,8 +3,8 @@
 "use strict"
 
 // JS
-import "./modules/eventModal.js"
-
+import "./modules/form/submit.js"
+import "./schedules/loadSchedules.js"
 
 // CSS
 import "./styles/global.css"

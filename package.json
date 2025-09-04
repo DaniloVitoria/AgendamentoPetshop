@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "npm run json-server --watch json-server.json",
+    "server": "json-server --watch json-server.json --port=3333",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,8 @@
   "description": "",
   "dependencies": {
     "dayjs": "^1.11.14",
-    "json-server": "^1.0.0-alpha.21"
+    "json-server": "^1.0.0-alpha.21",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
