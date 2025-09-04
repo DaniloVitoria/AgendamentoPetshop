@@ -22,7 +22,7 @@ export async function scheduleNew({id, name, pet, phone, service, date, time}){
 
 
         alert("Agendamento realizado com sucesso")
-
+        window.location.reload()
         
     } catch (error) {
         console.log("Não foi possível realizar o agendamento",error)

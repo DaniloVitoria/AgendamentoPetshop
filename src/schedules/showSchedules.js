@@ -2,12 +2,14 @@
 
 import { apiConfig } from "../services/api.js";
 import { FetchSchedules } from "../services/fetchApi.js";
+import { RemoveSchedule } from "./remove-schedules.js";
+import { RemoveScheduleFetch } from "../modules/form/erase_schedules.js";
 import dayjs from "dayjs";
 
 
 
 
-export async function ShowSchedules() {
+export async function ShowSchedules({dailySchedule}) {
     
 
 //tentando acessar a API
@@ -19,7 +21,7 @@ let data = await FetchSchedules()
 //percorrendo a data
 
 
-data.forEach(async(currentValue) => {
+dailySchedule.forEach(async(currentValue) => {
 
 
 
@@ -69,14 +71,18 @@ let hr = document.createElement("hr")
   let  hourOfService= await currentValue.timeOfService
   let hourOfDay = parseInt(hourOfService.split(":")[0])
   console.log(hourOfDay)
-    if(hourOfDay >= 6 && hourOfDay <= 11){
+    if(hourOfDay >= 9 && hourOfDay <= 12){
         period.innerText = "Manhã"
-    }else if(hourOfDay >= 12 && hourOfDay <=17){
+        hour.innerText = "09h-12h"
+    }else if(hourOfDay >= 13 && hourOfDay <=18){
         period.innerText = "Tarde"
-    }else if(hourOfDay >= 17 && hourOfDay <=22){
+        hour.innerText = "13h-18h"
+    }else if(hourOfDay >= 19 && hourOfDay <=21){
         period.innerText = "Noite"
+        hour.innerText = "19h-21h"
     }else {
         period.innerText = "Noite"
+        
     }
     
 
@@ -91,9 +97,15 @@ let hr = document.createElement("hr")
        imgOfPeriod.src = "../src/assets/Moon-Stars--Streamline-Solar.svg"
     }
 
+
+
+    
+
     //Adicionando as classes css
     period.classList.add("period")
     period__of__day.classList.add("period__of__day")
+    hour.classList.add("hour")
+   
 header__of__time__of__day.classList.add("header__of__time__of__day")
 time__of__day.classList.add("time__of__day")
 container__header__period.classList.add("container__header__period")
@@ -104,8 +116,9 @@ container__header__period.classList.add("container__header__period")
      period__of__day.appendChild(period)
     
     container__header__period.appendChild(period__of__day)
-
+    container__header__period.appendChild(hour)
     header__of__time__of__day.appendChild(container__header__period)
+    header__of__time__of__day.appendChild(hr)
     time__of__day.appendChild(header__of__time__of__day)
     
 
@@ -115,18 +128,99 @@ container__header__period.classList.add("container__header__period")
 
 
 
+    //Parte das informações do cliente
+
+    let clients = document.createElement("div")
+    let ul = document.createElement("ul")
+    let li = document.createElement("li")
+
+    let containerhour__and__names = document.createElement("div")
+
+    let hour_schedulepet = document.createElement("span")
+
+    let names__of__pet__and__client = document.createElement("div")
+
+    let name__pet = document.createElement("span")
+
+    let name__client =  document.createElement("span")
+
+    let service = document.createElement("span")
+
+    let remove__schedule = document.createElement("span")
+
+
+    //Adicionando css
+    containerhour__and__names.classList.add("containerhour__and__names")
+    hour_schedulepet.classList.add("hour-schedulepet")
+    names__of__pet__and__client.classList.add("names__of__pet__and__client")
+    name__pet.classList.add("name__pet")
+    name__client.classList.add("name__client")
+    service.classList.add("service")
+    remove__schedule.classList.add("remove__schedule")
+
+    hour_schedulepet.innerText = hourOfService
+
+    name__pet.innerText = currentValue.namePet
+    name__client.innerText = ` / ${currentValue.nameTutor}`
+
+    names__of__pet__and__client.appendChild(name__pet)
+    names__of__pet__and__client.appendChild(name__client)
+
+    containerhour__and__names.appendChild(hour_schedulepet)
+    containerhour__and__names.appendChild(names__of__pet__and__client)
 
 
 
+    service.innerText = currentValue.servicePet
+
+    remove__schedule.innerText = "Remover agendamento"
+
+
+    li.appendChild(containerhour__and__names)
+    li.appendChild(service)
+    li.appendChild(remove__schedule)
+
+    ul.appendChild(li)
+    clients.appendChild(ul)
+    time__of__day.appendChild(clients)
 
 
 // adiciona a lista
 list.appendChild(time__of__day)
+
+
+console.log(remove__schedule)
+remove__schedule.addEventListener("click", async(event)=> {
+    event.preventDefault()
+
+    try {
+
+        let id = await currentValue.id
+       await RemoveSchedule({id}) 
+
+       window.location.reload()
+    } catch (error) {
+        
+    }
+    
+})
+
+
+
+
+
+
+
     } catch (error) {
       
     }
     
+
+
+
+    
 })
+
 
 } catch (error) {
     
